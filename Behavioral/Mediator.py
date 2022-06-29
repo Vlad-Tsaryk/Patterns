@@ -1,5 +1,4 @@
 from __future__ import annotations
-
 import datetime
 import time
 from abc import ABC, abstractmethod
@@ -13,7 +12,7 @@ class Mediator(ABC):
 
 class ChatRoom(Mediator):
 
-    def notify(self, sender: object, message: str) -> None:
+    def notify(self, sender: User, message: str) -> None:
         print(f'ChatRoom[{sender.get_name()}]:{message} [{datetime.datetime.now()}]')
 
 
@@ -40,5 +39,3 @@ if __name__ == "__main__":
     usr1.send_message('Hello')
     time.sleep(1)
     usr2.send_message('Hi')
-
-

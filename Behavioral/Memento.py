@@ -7,41 +7,14 @@ class Memento:
         self._date = str(datetime.now())[:19]
 
     def get_state(self) -> str:
-<<<<<<< HEAD
-
         return self._state
 
     def get_name(self) -> str:
-
-=======
-        return self._state
-
-    def get_name(self) -> str:
->>>>>>> origin/master
         return f"{self._date}: {self._state}"
 
     def get_date(self) -> str:
         return self._date
 
-<<<<<<< HEAD
-class Player:
-    _state = None
-
-    def __init__(self, state: list = [0,0]) -> None:
-        self._state: list  = state
-        print(f"Player: My coords: {self._state}")
-
-    def move(self,x,y):
-        self._state = [x,y]
-        print(f'Set coords: {x,y}')
-
-    def save(self) -> Memento:
-
-        return Memento(self._state)
-
-    def restore(self, memento: Memento) -> None:
-
-=======
 
 class Player:
     _state = None
@@ -58,15 +31,10 @@ class Player:
         return Memento(self._state)
 
     def restore(self, memento: Memento) -> None:
->>>>>>> origin/master
         self._state = memento.get_state()
         print(f"Player: My coords has changed to: {self._state}")
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> origin/master
 class Game:
 
     def __init__(self, palyer: Player) -> None:
@@ -95,19 +63,6 @@ class Game:
 
 
 if __name__ == "__main__":
-<<<<<<< HEAD
-    player = Player([0,0])
-    game = Game(player)
-
-    game.backup()
-    player.move(1,0)
-
-    game.backup()
-    player.move(15,6)
-
-    game.backup()
-    player.move(12,8)
-=======
     player = Player([0, 0])
     game = Game(player)
 
@@ -119,7 +74,6 @@ if __name__ == "__main__":
 
     game.backup()
     player.move(12, 8)
->>>>>>> origin/master
     game.backup()
 
     print()
